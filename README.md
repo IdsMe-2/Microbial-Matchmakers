@@ -1,6 +1,6 @@
 # Microbial Matchmakers – Regulatory Analysis of Host Microbiome Assembly
 
-This repository contains the full materials, methods, and supporting scripts used in a bioinformatics project to identify transcription factors (TFs) involved in microbiome assembly in *Arabidopsis thaliana* and *Lotus japonicus*. The goal is to reconstruct gene regulatory networks that explain how plants modulate their microbiome in response to host-specific synthetic communities.
+This repository contains the materials & methods, and supporting scripts used in a bioinformatics project to identify transcription factors involved in microbiome assembly in *Arabidopsis thaliana* and *Lotus japonicus*. The goal is to reconstruct gene regulatory networks that explain how plants modulate their microbiome in response to host-specific synthetic communities.
 
 ---
 
