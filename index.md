@@ -69,3 +69,30 @@ TFs were removed one-by-one from the GRNs. Changes in network fragmentation were
 ---
 
 This pipeline enables the discovery of context-specific regulatory patterns in host microbiome interactions and is applicable to other plant systems.
+
+---
+
+## Scripts
+
+- [Gene Annotation](scripts/Gene_annotation.py)
+- [Global GRN (Arabidopsis)](scripts/GRNBoost2_global_GRN_At.py)
+- [SC-specific GRN (Arabidopsis)](scripts/GRNBoost2_AtSC.py)
+- [Motif Visualization](scripts/Motif_distribution_visualization.py)
+- [Shuffled Motif Control](scripts/Shuffled_control_At_100_times.py)
+- [Promoter Extraction](scripts/Extract_upstream_promoter_sequences.py)
+- [Background Comparison Arabidopsis vs Lotus](scripts/Background_Arabidopsis_vs_Lotus.py)
+- [Perturbation Analysis – Part 1](scripts/perturbation_analysis_part_1.py)
+- [Perturbation Analysis – Part 2](scripts/perturbation_part_2_visualization_plot.py)
+
+---
+
+## Figures
+
+![Figure 1](figures/Figure1 Transcriptional responses specific to syncoms in roots of lotus and arabidopsis, from Wippel et al 2021 with permission.png)
+*Transcriptional responses specific to SynComs in Lotus and Arabidopsis.*
+
+![Figure 2](figures/Figure2 comparative analysis of enriched TF binding motifs in arabidopsis cluster 3 and lotus cluster 6 via arabidopsis homologs.png)
+*Comparative analysis of enriched TF motifs in promoters.*
+
+<!-- Add more figures as needed -->
+
