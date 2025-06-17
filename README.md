@@ -55,7 +55,7 @@ Visuals from each stage of the pipeline, such as:
 
 If using this repository or pipeline, please cite:
 - Wippel et al., Nature Microbiology (2021)
-- This GitHub repository and your own citation if part of a thesis/report
+- This GitHub repository (https://github.com/IdsMe-2/Microbial-Matchmakers.git) and it's corresponding thesis: *Microbial Matchmaker: Using Machine Learning to Identify Plant Transcription Factor Targets Involved in Host Microbiome Assembly*
 
 ---
 
