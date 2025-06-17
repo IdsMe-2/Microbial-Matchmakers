@@ -2,7 +2,7 @@
 
 This repository contains the full materials, methods, and supporting scripts used in a bioinformatics project to identify transcription factors (TFs) involved in microbiome assembly in *Arabidopsis thaliana* and *Lotus japonicus*. The goal is to reconstruct gene regulatory networks that explain how plants modulate their microbiome in response to host-specific synthetic communities.
 
-➡ View the GitHub Page with detailed documentation here:  
+View the GitHub Page with detailed documentation here:  
 **(https://github.com/IdsMe-2/Microbial-Matchmakers.git)**
 
 ---
