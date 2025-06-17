@@ -15,8 +15,6 @@ View the GitHub Page with detailed documentation here:
 
 ┣ 📄 README.md ← This file
 
-┣ 📄 .nojekyll ← Ensures raw Markdown rendering on GitHub Pages
-
 ┣ 📁 scripts/ ← All custom Python scripts used for analysis
 
 ┣ 📁 figures/ ← Figures used in the report and web documentation
