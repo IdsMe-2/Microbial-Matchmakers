@@ -1,98 +1,85 @@
+# Microbial Matchmakers – Materials and Methods
 
-# Materials and Methods
-
-This section describes the bioinformatics pipeline used to identify transcription factor (TF) targets involved in host microbiome assembly in *Arabidopsis thaliana* and *Lotus japonicus*.
-
----
-
-## 1. Gene Selection
-
-RNA-seq data from Wippel et al. (2021) was used to identify host-specific clusters:
-- Arabidopsis: Cluster 3
-- Lotus: Cluster 6
-
-Genes were selected based on co-expression under synthetic microbial communities (SCs). Only TFs from these clusters were used for further analysis.
+This project explores how plants regulate microbiome assembly by identifying key transcription factors (TFs) and their gene targets in *Arabidopsis thaliana* and *Lotus japonicus*. Below is the full documentation of the bioinformatics pipeline, supporting scripts, and figures.
 
 ---
 
-## 2. Promoter Sequence Extraction
+## Overview of Methods
 
-Promoters (1000 bp upstream of TSS) for Arabidopsis genes were extracted from TAIR10. Lotus homologs were mapped to Arabidopsis gene IDs when needed.
+### 1. Gene Selection
 
----
+Gene expression clusters responsive to synthetic microbial communities (SCs) were extracted from Wippel et al. (2021). Clusters were filtered for transcription factors (TFs) using PlantTFDB annotations.
 
-## 3. Motif Discovery
+### 2. Promoter Sequence Extraction
 
-Two tools from MEME Suite were used:
-- **FIMO**: scanned for known motifs (using JASPAR 2022)
-- **STREME**: de novo motif discovery
+Arabidopsis promoter sequences were extracted (1000 bp upstream of TSS) using TAIR10. For Lotus, homologous Arabidopsis gene IDs were used due to limited genomic annotation.
 
----
+### 3. Motif Discovery
 
-## 4. Motif Validation and Enrichment
+- **FIMO**: scanned for known motifs from the JASPAR database
+- **STREME**: discovered novel enriched motifs in promoter sequences
 
-### 4.1 GO Enrichment
-Functional GO enrichment was performed with PANTHER using genes from selected clusters.
+### 4. Motif Validation and Enrichment
 
-### 4.2 Motif Enrichment
-Motif occurrences in target genes vs background genes were compared using Fisher’s Exact Test with FDR correction.
+- GO enrichment using PANTHER
+- Motif enrichment statistics using Fisher's exact test and FDR correction
+- 100x shuffled motif controls
 
-### 4.3 Shuffled Control
-Promoter sequences were shuffled (100x) and FIMO was rerun to generate an empirical p-value distribution.
+### 5. Gene Regulatory Network (GRN) Inference
 
----
+Used **GRNBoost2** (via Arboreto) on transcriptome data from Arabidopsis and Lotus to infer regulatory relationships between TFs and target genes.
 
-## 5. Gene Annotation
+### 6. Network Visualization and Robustness Testing
 
-Motif occurrences were mapped to Arabidopsis GFF3 annotations. Motif location and orientation were linked to gene IDs.
-
----
-
-## 6. Gene Regulatory Network (GRN) Inference
-
-**GRNBoost2** (via Arboreto) inferred TF-target relationships using bulk RNA-seq data. Two networks were built:
-- Global GRN (all 16 samples)
-- SC-specific GRN (only AtSC and LjSC samples)
-
----
-
-## 7. Network Visualization
-
-TFs and their target motifs were visualized using **Cytoscape**. Key nodes were identified using centrality metrics.
-
----
-
-## 8. Robustness Testing
-
-TFs were removed one-by-one from the GRNs. Changes in network fragmentation were recorded using NetworkX.
-
----
-
-This pipeline enables the discovery of context-specific regulatory patterns in host microbiome interactions and is applicable to other plant systems.
+Networks were visualized in Cytoscape. Perturbation analysis simulated TF removals to assess network stability.
 
 ---
 
 ## Scripts
 
-- [Gene Annotation](scripts/Gene_annotation.py)
-- [Global GRN (Arabidopsis)](scripts/GRNBoost2_global_GRN_At.py)
-- [SC-specific GRN (Arabidopsis)](scripts/GRNBoost2_AtSC.py)
-- [Motif Visualization](scripts/Motif_distribution_visualization.py)
-- [Shuffled Motif Control](scripts/Shuffled_control_At_100_times.py)
-- [Promoter Extraction](scripts/Extract_upstream_promoter_sequences.py)
-- [Background Comparison Arabidopsis vs Lotus](scripts/Background_Arabidopsis_vs_Lotus.py)
-- [Perturbation Analysis – Part 1](scripts/perturbation_analysis_part_1.py)
-- [Perturbation Analysis – Part 2](scripts/perturbation_part_2_visualization_plot.py)
+| Script Name | Description |
+|------------|-------------|
+| [`Gene_annotation.py`](scripts/Gene_annotation.py) | Maps FIMO motifs to gene features using GFF3 annotations |
+| [`GRNBoost2_global_GRN_At.py`](scripts/GRNBoost2_global_GRN_At.py) | Infers a global GRN using expression data across all samples |
+| [`GRNBoost2_AtSC.py`](scripts/GRNBoost2_AtSC.py) | Infers a GRN using only At-SC samples to highlight context-specific regulation |
+| [`Motif_distribution_visualization.py`](scripts/Motif_distribution_visualization.py) | Visualizes positional bias of TF motifs in promoters |
+| [`Shuffled_control_At_100_times.py`](scripts/Shuffled_control_At_100_times.py) | Performs FIMO scans on 100 randomized promoter sets to calculate empirical p-values |
+| [`Extract_upstream_promoter_sequences.py`](scripts/Extract_upstream_promoter_sequences.py) | Extracts 1kb upstream sequences from Arabidopsis and Lotus genomes |
+| [`Background_Arabidopsis_vs_Lotus.py`](scripts/Background_Arabidopsis_vs_Lotus.py) | Creates background gene sets for motif enrichment analysis |
+| [`perturbation_analysis_part_1.py`](scripts/perturbation_analysis_part_1.py) | Removes individual TFs from GRN and computes network fragmentation |
+| [`perturbation_part_2_visualization_plot.py`](scripts/perturbation_part_2_visualization_plot.py) | Plots network robustness metrics from perturbation results |
 
 ---
 
 ## Figures
 
-![Figure 1](figures/Figure1 Transcriptional responses specific to syncoms in roots of lotus and arabidopsis, from Wippel et al 2021 with permission.png)
-*Transcriptional responses specific to SynComs in Lotus and Arabidopsis.*
+Each figure visualizes a key result or method step in the pipeline.
 
-![Figure 2](figures/Figure2 comparative analysis of enriched TF binding motifs in arabidopsis cluster 3 and lotus cluster 6 via arabidopsis homologs.png)
-*Comparative analysis of enriched TF motifs in promoters.*
+| Figure | Description |
+|--------|-------------|
+| ![](figures/FigureS1 flowchart of microbial matchmakers.png) | **Figure S1**: Full bioinformatics pipeline overview |
+| ![](figures/Figure1 Transcriptional responses specific to syncoms in roots of lotus and arabidopsis, from Wippel et al 2021 with permission.png) | **Figure 1**: PCA and expression heatmaps from Wippel et al. |
+| ![](figures/Figure2 comparative analysis of enriched TF binding motifs in arabidopsis cluster 3 and lotus cluster 6 via arabidopsis homologs.png) | **Figure 2**: Top TF motifs detected by FIMO |
+| ![](figures/Figure3 significantly enriched or depleted transcription factor motifs in arabdopsis cluster 3 promoters.png) | **Figure 3**: Statistical enrichment of specific motifs |
+| ![](figures/Figure4 real vs shuffled motif scores with FDR correction lotus cluster 6.png) | **Figure 4**: Motif significance in Lotus via shuffled control |
+| ![](figures/Figure5 real vs shuffled motif scores with FDR correction arabidopsis cluster 3.png) | **Figure 5**: Same as above for Arabidopsis |
+| ![](figures/Figure6 visual comparison of TFs between the global GRN and the SC specific GRN for arabidopsis.png) | **Figure 6**: Differential TF roles in global vs. SC GRNs |
+| ![](figures/Figure7 gene regulatory network inferred from arabidopsis roots inoculated with synthetic communities visualized in cytoscape.png) | **Figure 7**: Cytoscape-rendered GRN of Arabidopsis |
+| ![](figures/Figure8 gene regulatory subnetwork centered on the top three transcription factors with the highest number of predicted targets in the arabidopsis global GRN inferred with GRNBoost2.png) | **Figure 8**: Zoom-in on top TFs and their targets |
+| ![](figures/Figure9 comparison of network disruption after individual removal of the top 100 most connected TFs from the SC specific GRN.png) | **Figure 9**: Effect of TF removals on network fragmentation |
+| ![](figures/Figure10 impact of transcription factor removal on network connectivity.png) | **Figure 10**: Quantitative summary of perturbation outcomes |
 
-<!-- Add more figures as needed -->
+---
 
+## Data & Resources
+
+- Arabidopsis genome: [TAIR10](https://www.arabidopsis.org/)
+- Motif database: [JASPAR 2022](https://jaspar.genereg.net/)
+- Expression data: From Wippel et al. (2021), Nature Microbiology
+- Pipeline source repo: [MPIPZ_Kathrin_Persistence_RNASeq (GitHub)](https://github.com/YulongNiu/MPIPZ_Kathrin_Persistence_RNASeq)
+
+---
+
+## Citation
+
+If reusing this pipeline, please cite the original data sources and this GitHub repository.
