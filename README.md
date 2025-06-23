@@ -6,15 +6,15 @@ This repository contains the materials & methods, and supporting scripts used in
 
 ## Repository Structure
 
-📦 microbial-matchmakers-methods/
+microbial-matchmakers-methods/
 
-┣ 📄 index.md ← Webpage content (Materials & Methods)
+┣ index.md ← Webpage content (Materials & Methods)
 
-┣ 📄 README.md ← This file
+┣ README.md ← This file
 
-┣ 📁 scripts/ ← All custom Python scripts used for analysis
+┣ scripts/ ← All custom Python scripts used for analysis
 
-┣ 📁 figures/ ← Figures used in the report and web documentation
+┣ figures/ ← Figures used in the report and web documentation
 
 
 ## Contents
