@@ -134,6 +134,8 @@ arboreto==0.1.6
 
 ## Citation
 
+See full references in [`Citations.md`]
+
 If you use this repository or code, please cite:
 
 > Wippel et al., *Nature Microbiology* (2021)
