@@ -24,12 +24,14 @@ The results are presented in the thesis:
 
 
 ```txt
-microbial-matchmakers-methods/
+microbial-matchmakers/
 ├── index.md                      # Materials & Methods (web version)
 ├── README.md                     # This file
 ├── scripts/                      # All custom Python scripts
 ├── figures/                      # PNGs used in report/thesis
 ├── data/                         # Sample inputs or Crunchomics references
+├── results/                      # Output data used in thesis figures (see below)
+├── CITATIONS.md                 # Full reference list for tools and papers
 ├── requirements.txt              # Python environment dependencies
 
 ```
