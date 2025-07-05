@@ -38,8 +38,7 @@ microbial-matchmakers-methods/
 ## Pipeline Overview
 
 
-RNA-seq data → Cluster genes → Extract promoters → Motif scan with FIMO/STREME
-↘ GRN inference with GRNBoost2 → Network robustness by TF deletion
+RNA-seq data → Cluster genes → Extract promoters → Motif scan with FIMO/STREME → GRN inference with GRNBoost2 → Network robustness by TF deletion
 
 
 ---
@@ -132,7 +131,9 @@ arboreto==0.1.6
 If you use this repository or code, please cite:
 
 > Wippel et al., *Nature Microbiology* (2021)
+
 > Hartman, I. (2025) *Microbial Matchmakers: Using Machine Learning to Identify Plant Transcription Factor Targets Involved in Host Microbiome Assembly*
+
 > GitHub: [https://github.com/IdsMe-2/Microbial-Matchmakers](https://github.com/IdsMe-2/Microbial-Matchmakers)
 
 ---
