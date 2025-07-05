@@ -31,7 +31,8 @@ microbial-matchmakers/
 ├── figures/                      # PNGs used in report/thesis
 ├── data/                         # Sample inputs or Crunchomics references
 ├── results/                      # Output data used in thesis figures (see below)
-├── CITATIONS.md                 # Full reference list for tools and papers
+├── thesis/                       # Thesis corresponding to this GitHub
+├── CITATIONS.md                  # Full reference list for tools and papers
 ├── requirements.txt              # Python environment dependencies
 
 ```
