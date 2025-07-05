@@ -22,7 +22,7 @@ The results are presented in the thesis:
 
 ## Repository Structure
 
-```
+
 
 microbial-matchmakers-methods/
 ├── index.md                      # Materials & Methods (web version)
@@ -32,18 +32,15 @@ microbial-matchmakers-methods/
 ├── data/                         # Sample inputs or Crunchomics references
 ├── requirements.txt              # Python environment dependencies
 
-```
 
 ---
 
 ## Pipeline Overview
 
-```
 
 RNA-seq data → Cluster genes → Extract promoters → Motif scan with FIMO/STREME
 ↘ GRN inference with GRNBoost2 → Network robustness by TF deletion
 
-````
 
 ---
 
@@ -78,7 +75,6 @@ RNA-seq data → Cluster genes → Extract promoters → Motif scan with FIMO/ST
    ```bash
    git clone https://github.com/IdsMe-2/Microbial-Matchmakers.git
    cd Microbial-Matchmakers
-````
 
 2. Create a Python environment:
 
@@ -148,4 +144,3 @@ University of Amsterdam – Green Life Sciences
 Focus: Biosystems Data Analysis & Plant Hormone Biology
 June 2025
 
-```
