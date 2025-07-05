@@ -23,7 +23,7 @@ The results are presented in the thesis:
 ## Repository Structure
 
 
-
+""
 microbial-matchmakers-methods/
 ├── index.md                      # Materials & Methods (web version)
 ├── README.md                     # This file
@@ -32,7 +32,7 @@ microbial-matchmakers-methods/
 ├── data/                         # Sample inputs or Crunchomics references
 ├── requirements.txt              # Python environment dependencies
 
-
+""
 ---
 
 ## Pipeline Overview
