@@ -59,12 +59,16 @@ RNA-seq data → Cluster genes → Extract promoters → Motif scan with FIMO/ST
 
 ---
 
-## Example Outputs
+## Results & Underlying Data
 
-- `At_cluster3_enrichment_results.csv` – motif enrichment table (Fisher + FDR)
-- `fdr_significant_motifs_Cluster3.csv` – motifs with empirical p < 0.05
-- `grnboost2_output.tsv` – inferred gene–TF edges with importance scores
-- `TF_disruption_num_components_SC_specific.png` – TF perturbation impact plot
+All underlying data used to generate Figures 3–5 are available in the [`results/`](results/) folder.
+
+| Figure | Cluster | File | Description |
+|--------|---------|------|-------------|
+| Figure 3 | Arabidopsis Cluster 3 | `At_cluster3_enrichment_results_3_6_2025.csv` | Motif enrichment (Fisher exact test + FDR) |
+| Figure 4 | Lotus Cluster 6 | `fdr_significant_motifs_Cluster6.csv` | Real vs. shuffled motif scores with FDR |
+| Figure 5 | Arabidopsis Cluster 3 | `fdr_significant_motifs_Cluster3.csv` | Real vs. shuffled motif scores with FDR |
+
 
 ---
 
