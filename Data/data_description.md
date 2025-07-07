@@ -31,7 +31,36 @@ This file describes the contents of the `data/` folder, providing clarification 
 
 ---
 
-## 2. `selected_upstream_sequences_cluster3.fasta`
+## 2. `Lj_expression_data.xlsx`
+
+**Description:**
+
+* Same structure as `Expression_data_At.xlsx`, but for *Lotus japonicus* gene expression data.
+* Also contains 16 samples under the 4 conditions described above.
+* Used for cross-species comparison and identification of Arabidopsis homologs for Lotus clusters.
+
+---
+
+## 3. `cluster_table_KW.xlsx`
+
+**Description:**
+
+* Cross-species cluster table linking *Arabidopsis* genes and their *Lotus* homologs.
+* Includes cluster assignments and GO term annotations.
+
+**Columns:**
+
+* `ID`: Arabidopsis gene ID (with transcript version)
+* `cl`: Arabidopsis cluster number
+* `ljID`: corresponding Lotus homolog ID
+* `ljcl1`, `ljcl2`: cluster assignments for the Lotus gene in two different clustering schemes
+* `GOID`: semicolon-separated Gene Ontology IDs
+* `Term`: associated biological processes
+* `TF_activity_AT`: whether the Arabidopsis gene is a transcription factor
+
+---
+
+## 4. `selected_upstream_sequences_cluster3.fasta`
 
 **Description:**
 
@@ -41,7 +70,7 @@ This file describes the contents of the `data/` folder, providing clarification 
 
 ---
 
-## 3. `selected_upstream_sequences_lotus_cluster6_Background_15_5_2025.fasta`
+## 5. `selected_upstream_sequences_lotus_cluster6_Background_15_5_2025.fasta`
 
 **Description:**
 
@@ -50,10 +79,32 @@ This file describes the contents of the `data/` folder, providing clarification 
 
 ---
 
-## 4. Other Notes
+## 6. `ALL_plant_motifs_JASPAR.meme`
 
-* All expression matrices and promoter sets are reproducible using the scripts provided in the repository (see `extract_upstream_promoter_sequences.py`, `background_cluster3.py`, etc.).
-* Data files reflect the structure used during final analyses for motif enrichment, GRN construction, and network perturbation.
+**Description:**
+
+* MEME-format motif database for plant transcription factors.
+* Downloaded from the JASPAR 2022 database.
+* Used in all FIMO-based motif scans in the project.
+
+---
+
+## 7. `TAIR10_GFF3_genes.zip`
+
+**Description:**
+
+* Compressed file containing the GFF3 genome annotation for *Arabidopsis thaliana*.
+* Used for mapping FIMO hits to gene features in `Gene_annotation.py`.
+
+---
+
+## 8. `TAIR10_upstream_1000_20101104.zip`
+
+**Description:**
+
+* Compressed file of Arabidopsis promoter sequences (1 kb upstream of TSS).
+* Source: TAIR10 upstream annotations.
+* Used in `extract_upstream_promoter_sequences.py` to extract relevant sequences.
 
 ---
 
